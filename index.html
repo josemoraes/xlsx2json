@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>XLSX2JSON</title>
+    <meta name="description" content="Convert XLSX file into JSON Object" />
+    <link href="styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <main>
+      <form
+        class="box has-advanced-upload"
+        id="drag-file-form"
+        method="post"
+        action="{{ route('admin.file.store') }}"
+        enctype="multipart/form-data"
+        data-csrf="{{ csrf_token() }}"
+      >
+        <div class="box__input">
+          <input
+            class="box__file"
+            type="file"
+            name="file"
+            id="file"
+            data-multiple-caption="{count} files selected"
+          />
+          <label for="file"
+            ><strong>Escolha um arquivo</strong
+            ><span class="box__dragndrop"> ou solte-o aqui</span>.</label
+          >
+        </div>
+        <div class="box__uploading">Enviando arquivo&hellip;</div>
+        <div class="box__success"></div>
+        <div class="box__error"></div>
+      </form>
+    </main>
+    <script
+      src="https://code.jquery.com/jquery-3.5.0.slim.min.js"
+      integrity="sha256-MlusDLJIP1GRgLrOflUQtshyP0TwT/RHXsI1wWGnQhs="
+      crossorigin="anonymous"
+    ></script>
+    <script src="main.js"></script>
+  </body>
+</html>
